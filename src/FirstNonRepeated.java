@@ -5,7 +5,7 @@ public class FirstNonRepeated {
 	
 	public static char noRepeat(String s)
 	{
-		char ans=0;
+	
 		Set<Character> repeated=new HashSet<Character>();
 		Set<Character> nonrep=new LinkedHashSet<Character>();
 		for(int i=0;i<s.length();i++)
@@ -21,7 +21,7 @@ public class FirstNonRepeated {
 				}
 			}
 		}
-		System.out.println(repeated+"\n"+nonrep);
+		//System.out.println(repeated+"\n"+nonrep);
 		if(nonrep.size()>1)
 		{
 			for(Character c: nonrep)
@@ -34,7 +34,11 @@ public class FirstNonRepeated {
 	}
 	public static void main(String args[])
 	{
-		String s="the quick brown fox jumps over the lazy dog";
-		System.out.println(noRepeat(s));
+		String s="thehte";
+		char c=noRepeat(s);
+		if(c!='!')
+			System.out.println("The first non repeating character is: " +c);
+		else
+			System.out.println("No non repeating characters exist in the string");
 	}
 }
