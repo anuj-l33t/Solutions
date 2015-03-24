@@ -24,8 +24,8 @@ public class LongestSubstring {
 		        	maxStart=start;
 		        }
 		    }
-		    System.out.println(word.substring(maxStart,maxEnd));
-		    return "";
+		    return word.substring(maxStart,maxEnd);
+		
 		    		
 
 	 }
