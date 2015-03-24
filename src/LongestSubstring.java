@@ -2,50 +2,37 @@
 import java.util.*;
 public class LongestSubstring {
 	 public static String lengthOfLongestSubstring(String word) {
-		 String ans="";
-		 //List<Character> st=new LinkedList<Character>();
-		 Set<Character> st=new LinkedHashSet<Character>();
-		   String longestSoFar ="";
-           int count = 0;
-           int longestSize=0;
-           for(int i=0;i<word.length();i++)
-           {
-        	   char c=word.charAt(i);
-        	   if(!st.contains(c))
-        	   {
-        		   st.add(c);
-        		   count++;
-        	   }
-        	   else
-        	   {
-        		   if(count>longestSize)
-        		   {
-        			   longestSize=count;
-        			   longestSoFar=getString(st);
-        			  
-        		   }
-        		   count=0;
-        		   st.clear();
-        		   i--;
-        	   }
-           }
-           if(longestSoFar.isEmpty())//If the input string had all unique chars
-        	   longestSoFar=getString(st);
-         System.out.println(longestSoFar);
-		 return ans;
-				 
-	 }
-	 public static String getString(Set<Character> st){
-		 StringBuffer sb=new StringBuffer();
-		 for(Character c: st)
-			 sb.append(c);
+
+		    int start = 0;
+		    int end = 0;
+		    int maxStart = 0;
+		    int maxEnd = 0;
 		 
-		 return sb.toString();
+		    HashMap<Character,Integer> mp=new HashMap<Character,Integer>();
+
+		    for (int i = 0; i < word.length(); i++) {
+		        char c = word.charAt(i);
+		        if(mp.containsKey(c) && mp.get(c)>=start)
+		        {
+		        	start=mp.get(c)+1;
+		        }
+		        end++;
+		        mp.put(c, i);
+		        if(end-start>maxEnd-maxStart)
+		        {
+		        	maxEnd=end;
+		        	maxStart=start;
+		        }
+		    }
+		    System.out.println(word.substring(maxStart,maxEnd));
+		    return "";
+		    		
+
 	 }
 
 	 public static void main(String args[])
 	 {
-		String s="dasf";
+		String s="abcdaefghdps";
 		 System.out.println(s.length());
 		 System.out.println(lengthOfLongestSubstring(s));
 	 }
