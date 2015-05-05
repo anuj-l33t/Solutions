@@ -1,3 +1,5 @@
+package src;
+
 
 public class LongestPali {
 	public static String func(String s,int left,int right)

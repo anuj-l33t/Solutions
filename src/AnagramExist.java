@@ -1,3 +1,5 @@
+package src;
+
 import java.util.*;
 
 /*You are given 2 strings

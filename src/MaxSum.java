@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Arrays;
 
 //This is kadane's algo to print the max/ min sum of a subarray.

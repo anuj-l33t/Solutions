@@ -1,3 +1,5 @@
+package src;
+
 //Prints the number of distinct palindromes inside a given string
 
 import java.util.*;

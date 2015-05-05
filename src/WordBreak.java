@@ -1,7 +1,9 @@
-//Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
 
+
+
+package src;
 import java.util.*;
-
+//Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
 
 public class WordBreak {
 	public static String chk(String s, Set<String> st)

@@ -1,3 +1,5 @@
+package src;
+
 //Given a sorted array Find the number of occurences of a given number using binary search. Returns -1 if number not found
 public class Occur {
 

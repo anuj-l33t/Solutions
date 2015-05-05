@@ -1,3 +1,4 @@
+package src;
 //Program to print a pascal triangle iteratively or recursively
 
 public class Pascal {

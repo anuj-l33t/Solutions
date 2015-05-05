@@ -1,3 +1,5 @@
+package src;
+
 /*
  * Program to make a binary tree given the level order traversal
  * The String "#" denotes a null Node in the Tree
@@ -5,21 +7,6 @@
 
 import java.util.*;
 
-class TreeNode {
-	int v;
-	TreeNode left, right;
-
-	TreeNode() {
-		this.left = null;
-		this.right = null;
-	}
-
-	TreeNode(int v) {
-		this.left = null;
-		this.right = null;
-		this.v = v;
-	}
-}
 
 public class TreeFromLevelOrder {
 

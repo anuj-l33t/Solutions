@@ -1,3 +1,5 @@
+package src;
+
 //Return the first non repeating character in a given string
 
 import java.util.*;
@@ -22,9 +24,11 @@ public class FirstNonRepeated {
 			}
 		}
 		//System.out.println(repeated+"\n"+nonrep);
-		if(nonrep.size()>1)
+		
+		if(nonrep.size()>=1)
 		{
-			for(Character c: nonrep)
+			
+			for(Character c: nonrep)//return the first character in the linked hashmap
 			{
 				
 				return c;
@@ -34,7 +38,7 @@ public class FirstNonRepeated {
 	}
 	public static void main(String args[])
 	{
-		String s="thehte";
+		String s="thehe";
 		char c=noRepeat(s);
 		if(c!='!')
 			System.out.println("The first non repeating character is: " +c);

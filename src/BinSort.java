@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Arrays;
 //An Efficient program to sort an array of only 0s and 1s
 

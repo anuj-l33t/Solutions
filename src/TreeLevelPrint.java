@@ -1,3 +1,5 @@
+package src;
+
 // Program to perform BFS on a tree. Can be used for level order printing and doing any level based tree operations. 
 
 import java.util.*;

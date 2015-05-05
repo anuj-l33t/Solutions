@@ -1,3 +1,4 @@
+package src;
 /*Given an array Of integers build a new array of integers such that every 2nd element of the array is greater than its left and right element. */
 
 import java.util.Arrays;

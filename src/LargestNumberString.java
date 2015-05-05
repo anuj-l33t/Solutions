@@ -1,4 +1,10 @@
+package src;
+
 import java.util.*;
+
+/*
+ * Given an Array of integers, Make the largest number from it
+ * */
 public class LargestNumberString {
 	
 	public static void main(String args[])

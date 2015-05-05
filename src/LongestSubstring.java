@@ -1,3 +1,5 @@
+package src;
+
 // Returns the longest substring of non repeated characters
 import java.util.*;
 public class LongestSubstring {

@@ -1,20 +1,8 @@
+package src;
+
 //Recursive Method to Mirror a Binary Tree and print it level by level
 import java.util.*;
-	class TreeNode{
-		int v;
-		TreeNode left;
-		TreeNode right;
-		TreeNode(int v)
-		{
-			this.v=v;
-			this.left=null;
-			this.right=null;
-		}
-		TreeNode(){
-			this.left=null;
-			this.right=null;
-		}
-	}
+
 public class MirrorTree {
 
 	public static void print(TreeNode root)
