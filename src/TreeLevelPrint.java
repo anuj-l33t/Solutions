@@ -5,24 +5,6 @@ package src;
 import java.util.*;
 
 
-<<<<<<< HEAD
-class TreeNode{
-	int v;
-	TreeNode left,right;
-	TreeNode()
-	{
-		this.left=null;
-		this.right=null;
-	}
-	TreeNode(int v)
-	{
-		this.v=v;
-		this.left=null;
-		this.right=null;
-	}
-}
-=======
->>>>>>> Removed the TreeNode class
 public class TreeLevelPrint {
 	/*
 	 * 		1
