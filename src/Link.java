@@ -10,4 +10,9 @@ public class Link {
 	{
 		this.v=v;
 	}
+	
+	public String toString()
+	{
+		return this.v +"";
+	}
 }
