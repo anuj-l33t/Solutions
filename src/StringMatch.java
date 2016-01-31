@@ -3,32 +3,34 @@ package src;
 public class StringMatch {
 	
 
-	public static boolean match(String input1, String input2) {
-		if(input1.length() == 0 && input2.length() == 0)
-			return true;
-		if(input2.length() == 0 && input1.charAt(0)!='*')
-			return false;
-		if(input1.length() ==0 && input2.length()!=0)
-			return false;
-		if (input1.charAt(0) == '*' && input1.length() != 1  && input2.length() == 0)
-			return false;
-		if(input1.charAt(0) == '*' && input1.length() ==1  && input2.length() == 0)
-			return true;
-		else if(input1.charAt(0) == '?'|| input1.charAt(0)==input2.charAt(0))
-			return match(input1.substring(1),input2.substring(1));
-		else if(input1.charAt(0) == '*'){
-			return match(input1,input2.substring(1)) || match(input1.substring(1),input2.substring(0));
+	public static boolean match(String p, String s) {
+		return match(s,0,p,0);
+	}
+	public static boolean match(String str,int si, String pat, int pi){
+		if(pi>pat.length()-1) return si>str.length()-1;
+		
+		if(pi+1<pat.length() && pat.charAt(pi+1)=='*'){
+			while(si<str.length() && (pat.charAt(pi)=='.' || pat.charAt(pi)==str.charAt(si))){
+				if(match(str,si,pat,pi+2)) return true;
+				si++;
+			}
+			return match(str,si,pat,pi+2);
 		}
-		else if(input1.charAt(0) != input2.charAt(0))
-			return false;
-		return false;
+		else
+		{
+			boolean rest=si<str.length() && (pat.charAt(pi)=='.' || pat.charAt(pi)==str.charAt(si));
+			boolean recurse=match(str,si+1,pat,pi+1);
+			return rest && recurse;
+		}
 	}
 	
-	
+
 	public static void main(String args[])
 	{
-		String p="p*t*";
-		String t="pattern";
+		String p="AAA";
+		String t="aaa";
+		p=p.toLowerCase();
+		t=t.toLowerCase();
 		System.out.println(match(p,t));
 
 	}
