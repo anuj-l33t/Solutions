@@ -16,7 +16,7 @@ public class Occur {
 
 	static int first(int a[], int left, int right, int x) {
 		if (left <= right) {
-			int mid = (left + right) / 2;
+			int mid = left+((right-left) / 2);
 			if (mid == 0 || x > a[mid - 1] && x == a[mid])
 				return mid;
 			else {
@@ -33,7 +33,7 @@ public class Occur {
 
 	static int last(int a[], int left, int right, int x) {
 		if (left <= right) {
-			int mid = (left + right) / 2;
+			int mid = left+((right-left) / 2);
 			if (mid == a.length - 1 || x < a[mid + 1] && x == a[mid])
 				return mid;
 			else {
@@ -48,7 +48,7 @@ public class Occur {
 
 	public static void main(String args[]) {
 		int a[] = { 1, 1, 1, 1, 2, 2 };
-		int n = count(a, 10);
+		int n = count(a, 1);
 		System.out.println(n);
 
 	}

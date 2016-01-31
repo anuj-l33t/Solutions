@@ -38,7 +38,8 @@ public class FirstNonRepeated {
 	}
 	public static void main(String args[])
 	{
-		String s="thehe";
+		String s="The quick brown fox jumps over the lazy dog";
+		s=s.toLowerCase();
 		char c=noRepeat(s);
 		if(c!='!')
 			System.out.println("The first non repeating character is: " +c);
