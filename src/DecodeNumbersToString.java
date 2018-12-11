@@ -13,35 +13,26 @@ public class DecodeNumbersToString {
 	public static char decode(int n) {
 		return (char) (n - 1 + 'A');
 	}
-
-	public static ArrayList<String> intToString(String s) {
-		ArrayList<String> ans = new ArrayList<String>();
-		if (s == "0" || s.length() == 0)
-			return ans;
-		StringBuffer ip = new StringBuffer();
-		StringBuffer sb = new StringBuffer();
-		for (int i = 1; i <= s.length(); i++) {
-			String cur = s.substring(i - 1, i);
-			if (!cur.equals("0"))
-				ip.append(decode(Integer.parseInt(cur)));
-			sb.append(cur);
-			if (sb.length() == 2) {
-				int z = Integer.parseInt(sb.toString());
-				if (z < 26) {
-					char c = decode(z);
-					ans.add(c + "");
-				}
-				sb.replace(0, 1, "");
-			}
-
+	public static int helper(String s,int n)
+	{
+		if(n==0)
+			return 1;
+		
+		int r = s.length()-n;
+		if(s.charAt(r) == '0') return 0;
+		int result = helper(s,n-1);
+		if(n>=2 && Integer.parseInt(s.substring(r,r+2))<=26)
+		{
+			result +=helper(s,n-2);
 		}
-		ans.add(ip.toString());
-		Collections.sort(ans);// If lexicographic sorting of strings is required
-		return ans;
+		return result;
+	}
+	public static int numDecodings(String input){
+		return helper(input,input.length());
 	}
 
 	public static void main(String args[]) {
 		String input = "123";
-		System.out.println(intToString(input));
+		System.out.println(numDecodings(input));
 	}
 }
